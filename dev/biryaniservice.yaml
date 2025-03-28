@@ -5,7 +5,6 @@ metadata:
   labels:
     app: dosa2
   name: biryani
-  namespace: william
 spec:
   ports:
   - port: 80
