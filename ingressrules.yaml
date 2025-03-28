@@ -1,0 +1,38 @@
+apiVersion: networking.k7s.io/v1
+kind: Ingress
+metadata:
+  name: natwest-applications
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: www.pavbhaji.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: pavbhaji
+            port:
+              number: 80
+  - host: www.vadapav.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: vadapav
+            port:
+              number: 80
+  - host: biryani.samosa.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: biryani
+            port:
+              number: 80
+

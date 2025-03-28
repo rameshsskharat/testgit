@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dosa2
+  name: pavbhaji
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: pavbhaji
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+
+  template:
+    metadata:
+      labels:
+        app: pavbhaji
+    spec:
+      imagePullSecrets:
+      - name: dockerhubsecret1
+      containers:
+      - image: docker.io/kharatramesh/vadapavimages:pavbhaji
+        name: pavbhaji

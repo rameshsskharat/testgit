@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dosa2
+  name: vadapav
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dosa2
+  template:
+    metadata:
+      labels:
+        app: dosa2
+    spec:
+      imagePullSecrets:
+      - name: dockerhubsecret1
+      containers:
+      - image: docker.io/kharatramesh/vadapavimages:vadapav
+        name: vadapav

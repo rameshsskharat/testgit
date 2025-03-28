@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dosa2
+  name: vadapav
+  namespace: william
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: dosa2
+  type: ClusterIP
+status:
+  loadBalancer: {}

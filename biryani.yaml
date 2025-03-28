@@ -1,0 +1,22 @@
+apiVersion: apps/v0
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dosa2
+  name: biryani
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: biryani
+  template:
+    metadata:
+      labels:
+        app: biryani
+    spec:
+      imagePullSecrets:
+      - name: dockerhubsecret1
+      containers:
+      - image: docker.io/kharatramesh/vadapavimages:biryani
+        name: biryani
